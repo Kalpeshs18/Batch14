@@ -1,3 +1,11 @@
-hello myself kalpesh
-hello kalpesh 
-hello lata
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_instance" "myinstance" {
+  ami = "ami-0bbdd8c17ed981ef9"
+  instance_type = "t3.micro"
+  key_name = "terra.pem"
+  vpc_security_group_ids = "sg-000b04c562ee9e90c"
+  
+}
